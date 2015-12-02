@@ -1,5 +1,7 @@
-(defvar *db*)
+(defvar *db* '())
 
-(defun set (k v db))
+(defun set-value (k v)
+  (setf (getf *db* k) v))
 
-(defun get (k db))
+(defun get-value (k)
+  (getf *db* k))
