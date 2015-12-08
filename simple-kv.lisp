@@ -2,15 +2,7 @@
 
 (in-package #:simple-kv)
 
-;;; TODO: Proper project
 ;;; TODO: Define public interface
-
-(in-package :cl-user)
-
-(defpackage :simple-kv
-  (:use :cl))
-
-(in-package :simple-kv)
 
 (defvar *db* '())
 
