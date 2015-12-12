@@ -2,20 +2,19 @@
 
 (in-package #:simple-kv)
 
-;;; TODO: Define public interface
+(defvar *current-kv-store* '())
 
-(defvar *db* '())
-
-(defun set-value (k v)
+(defun set-key-value (k v)
   (setf (getf *db* k) v))
 
-(defun get-value (k)
+(defun get-key-value (k)
   (getf *db* k))
 
 (defun delete-key (k) '())
 
-(defun persist (db) '())
+(defun persist (kv-store path) '())
 
-(defun open-db (db-file) '())
+(defun open-kv-store (path) '())
 
-(defun new-db () '())
+(defun new-kv-store ()
+  (setf *current-kv-store* '()))
