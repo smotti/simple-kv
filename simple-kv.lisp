@@ -12,7 +12,9 @@
   "Get the value for key from the store."
   (gethash key store))
 
-(defun delete-key (key) '())
+(defun delete-key (key store)
+  "Delete the key from the store."
+  (remhash key store))
 
 (defun persist (store path) '())
 
