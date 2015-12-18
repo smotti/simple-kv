@@ -23,3 +23,9 @@
 (defun new-kv-store ()
   (let ((new-store (make-hash-table :test 'equal)))
     (setf *current-kv-store* new-store)))
+
+(defun destroy-kv-store (store)
+  "Clears the whole store of its contents."
+  (clrhash store)
+  (when (eql store *current-kv-store*)
+    (setf *current-kv-store* nil)))
