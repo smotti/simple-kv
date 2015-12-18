@@ -4,11 +4,13 @@
 
 (defvar *current-kv-store*)
 
-(defun set-key-value (k v)
-  (setf (getf *db* k) v))
+(defun set-key-value (k v s)
+  "Set the value of the key k to v in the kv-store s. Returns the value."
+  (setf (gethash k s) v))
 
-(defun get-key-value (k)
-  (getf *db* k))
+(defun get-key-value (k s)
+  "Get the value for key k from the kv-store s."
+  (gethash k s))
 
 (defun delete-key (k) '())
 
