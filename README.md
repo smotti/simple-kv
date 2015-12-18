@@ -1,3 +1,3 @@
 # Description
 
-A simple in-memory key-value store.
+A simple embeddable in-memory key-value store.

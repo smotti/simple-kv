@@ -1,23 +1,20 @@
-;;; Naive implementation based on alist and/or plist which are both
-;;; linear-lookup structures, that means traversing the whole list and
-;;; comparing each key until one matches.
+;;;; simple-kv.lisp
 
-(in-package :cl-user)
+(in-package #:simple-kv)
 
-(defpackage :simple-kv
-  (:use :cl :usocket))
+(defvar *current-kv-store* '())
 
-(in-package :simple-kv)
-
-(defvar *db* '())
-
-(setf *server-socket*
-  (usocket:socket-listen "127.0.0.1" 1234
-                         :reuse-address t
-                         :element-type 'unsinged-byte))
-
-(defun set-value (k v)
+(defun set-key-value (k v)
   (setf (getf *db* k) v))
 
-(defun get-value (k)
+(defun get-key-value (k)
   (getf *db* k))
+
+(defun delete-key (k) '())
+
+(defun persist (kv-store path) '())
+
+(defun open-kv-store (path) '())
+
+(defun new-kv-store ()
+  (setf *current-kv-store* '()))
